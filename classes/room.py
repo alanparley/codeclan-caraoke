@@ -4,6 +4,8 @@ class Room:
         self.name = name
         self.songs = []
         self.guests = []
+        self.guest_limit = 5
+        self.entry_cost = 3.75  # £3.75
 
     def guest_count(self):
         return len(self.guests)

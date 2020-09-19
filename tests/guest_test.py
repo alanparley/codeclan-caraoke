@@ -13,3 +13,6 @@ class TestGuest(unittest.TestCase):
 
     def test_find_guest_by_age(self):
         self.assertEqual(16, self.guest_2.age)
+
+    def test_guest_can_pay(self):
+        self.assertEqual(96.25, self.guest_2.cash)
