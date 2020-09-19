@@ -9,9 +9,10 @@ class TestRoom(unittest.TestCase):
 
     def setUp(self):
         self.room = Room("The Karaoke Bar")
-        self.guest_1 = Guest("Jasper")
-        self.guest_2 = Guest("Magnus")
-        self.song_1 = Song("Atomic")
+        self.guest_1 = Guest("Jasper", 21, 50.00)
+        self.guest_2 = Guest("Magnus", 18, 35.00)
+        self.song_1 = Song("Queen", "Bohemian Rhapsody")
+        self.song_2 = Song("Oasis", "Wonderwall")
 
         guests = [self.guest_1, self.guest_2]
 
@@ -20,7 +21,8 @@ class TestRoom(unittest.TestCase):
 
     def test_can_add_song_to_room(self):
         self.room.add_song(self.song_1)
-        self.assertEqual(1, self.room.song_count())
+        self.room.add_song(self.song_2)
+        self.assertEqual(2, self.room.song_count())
 
     def test_can_add_guest_to_room(self):
         self.room.add_guest(self.guest_1)
