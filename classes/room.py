@@ -21,3 +21,6 @@ class Room:
 
     def remove_guest(self, guest):
         self.guests.remove(guest)
+
+    def guest_is_old_enough(self, guest):
+        return guest.age >= 18

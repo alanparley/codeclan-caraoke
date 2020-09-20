@@ -4,6 +4,3 @@ class Guest:
         self.name = name
         self.age = age
         self.cash = cash
-
-    def guest_can_pay(self, entry_cost):
-        self.cash -= entry_cost
