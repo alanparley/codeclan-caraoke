@@ -10,7 +10,7 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room("The Karaoke Bar")
         self.guest_1 = Guest("Jasper", 21, 50.00)
-        self.guest_2 = Guest("Magnus", 17, 35.00)
+        self.guest_2 = Guest("Magnus", 17, 2.00)
         self.song_1 = Song("Queen", "Bohemian Rhapsody")
         self.song_2 = Song("Oasis", "Wonderwall")
 
@@ -39,3 +39,9 @@ class TestRoom(unittest.TestCase):
 
     def test_guest_is_old_enough_returns_false(self):
         self.assertEqual(False, self.room.guest_is_old_enough(self.guest_2))
+
+    def test_customer_can_afford_entry_returns_true(self):
+        self.assertEqual(True, self.room.guest_can_afford(self.guest_1))
+
+    def test_customer_can_afford_entry_returns_false(self):
+        self.assertEqual(False, self.room.guest_can_afford(self.guest_2))

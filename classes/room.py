@@ -24,3 +24,6 @@ class Room:
 
     def guest_is_old_enough(self, guest):
         return guest.age >= 18
+
+    def guest_can_afford(self, guest):
+        return guest.cash >= self.entry_cost
