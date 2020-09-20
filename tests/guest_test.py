@@ -6,7 +6,7 @@ from classes.guest import Guest
 class TestGuest(unittest.TestCase):
     def setUp(self):
         self.guest_1 = Guest("Alan", 43, 100.00)
-        self.guest_2 = Guest("Young Lad", 16, 10)
+        self.guest_2 = Guest("Young Lad", 16, 10.00)
 
     def test_find_guest_by_name(self):
         self.assertEqual("Alan", self.guest_1.name)
