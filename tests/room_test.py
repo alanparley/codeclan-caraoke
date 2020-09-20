@@ -11,6 +11,9 @@ class TestRoom(unittest.TestCase):
         self.room = Room("The Karaoke Bar")
         self.guest_1 = Guest("Jasper", 21, 50.00)
         self.guest_2 = Guest("Magnus", 17, 2.00)
+        self.guest_3 = Guest("Rhea", 26, 35.00)
+        self.guest_4 = Guest("Emily", 38, 55.00)
+        self.guest_5 = Guest("Alan", 43, 40.00)
         self.song_1 = Song("Queen", "Bohemian Rhapsody")
         self.song_2 = Song("Oasis", "Wonderwall")
 
@@ -45,3 +48,10 @@ class TestRoom(unittest.TestCase):
 
     def test_customer_can_afford_entry_returns_false(self):
         self.assertEqual(False, self.room.guest_can_afford(self.guest_2))
+
+    def test_room_cannot_add_more_guests_than_limit(self):
+        self.room.add_guest(self.guest_1)
+        self.room.add_guest(self.guest_2)
+        self.room.add_guest(self.guest_3)
+        self.room.add_guest(self.guest_4)
+        self.assertEqual(3, len(self.room.guests))

@@ -4,7 +4,7 @@ class Room:
         self.name = name
         self.songs = []
         self.guests = []
-        self.guest_limit = 5
+        self.guest_limit = 3
         self.entry_cost = 3.75  # £3.75
 
     def guest_count(self):
@@ -17,7 +17,8 @@ class Room:
         self.songs.append(song)
 
     def add_guest(self, guest):
-        self.guests.append(guest)
+        if len(self.guests) < self.guest_limit:
+            self.guests.append(guest)
 
     def remove_guest(self, guest):
         self.guests.remove(guest)
