@@ -25,6 +25,10 @@ class TestRoom(unittest.TestCase):
     def test_room_has_till(self):
         self.assertEqual(100.00, self.room.till)
 
+    def test_can_add_to_till(self):
+        self.room.can_add_to_till(self.room.entry_cost)
+        self.assertEqual(103.75, self.room.till)
+
     def test_can_add_song_to_room(self):
         self.room.add_song(self.song_1)
         self.room.add_song(self.song_2)
@@ -51,6 +55,9 @@ class TestRoom(unittest.TestCase):
 
     def test_customer_can_afford_entry_returns_false(self):
         self.assertEqual(False, self.room.guest_can_afford(self.guest_2))
+
+    # def test_guest_can_pay(self):
+    #     self.assertEqual(3.75, self.room.guest_can_pay(self.guest_2))
 
     def test_room_cannot_add_more_guests_than_limit(self):
         self.room.add_guest(self.guest_1)

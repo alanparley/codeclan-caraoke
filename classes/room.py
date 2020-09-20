@@ -30,6 +30,16 @@ class Room:
     def guest_can_afford(self, guest):
         return guest.cash >= self.entry_cost
 
+    def can_add_to_till(self, entry_cost):
+        self.till += self.entry_cost
+
+    # def guest_can_pay(self, guest):
+    #     self.till = 0.00
+    #     if guest.cash >= self.entry_cost:
+    #         self.till += self.entry_cost
+    #         guest.cash -= self.entry_cost
+    #         return self.till
+
     def room_full(self, guest):
         self.guests.append(guest)
         if len(self.guests) > self.guest_limit:
