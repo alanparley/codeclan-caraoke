@@ -5,7 +5,7 @@ class Room:
         self.songs = []
         self.guests = []
         self.guest_limit = 3
-        self.entry_cost = 3.75  # £3.75
+        self.entry_cost = 3.75
 
     def guest_count(self):
         return len(self.guests)
@@ -28,3 +28,8 @@ class Room:
 
     def guest_can_afford(self, guest):
         return guest.cash >= self.entry_cost
+
+    def room_full(self, guest):
+        self.guests.append(guest)
+        if len(self.guests) > self.guest_limit:
+            return "Room Full"

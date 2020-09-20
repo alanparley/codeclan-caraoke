@@ -54,4 +54,14 @@ class TestRoom(unittest.TestCase):
         self.room.add_guest(self.guest_2)
         self.room.add_guest(self.guest_3)
         self.room.add_guest(self.guest_4)
+        self.room.add_guest(self.guest_5)
         self.assertEqual(3, len(self.room.guests))
+
+    def test_room_will_let_know_when_full(self):
+        self.room.room_full(self.guest_1)
+        self.room.room_full(self.guest_2)
+        self.room.room_full(self.guest_3)
+        self.room.room_full(self.guest_4)
+        self.room.room_full(self.guest_5)
+        self.assertEqual(
+            "Room Full", self.room.room_full(self.room.guest_limit))
