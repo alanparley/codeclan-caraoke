@@ -8,7 +8,7 @@ from classes.song import Song
 class TestRoom(unittest.TestCase):
 
     def setUp(self):
-        self.room = Room("The Karaoke Bar")
+        self.room = Room("The Karaoke Bar", 100.00)
         self.guest_1 = Guest("Jasper", 21, 50.00)
         self.guest_2 = Guest("Magnus", 17, 2.00)
         self.guest_3 = Guest("Rhea", 26, 35.00)
