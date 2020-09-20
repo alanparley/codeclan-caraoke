@@ -34,3 +34,7 @@ class Room:
         self.guests.append(guest)
         if len(self.guests) > self.guest_limit:
             return "Room Full"
+
+    def pay_fee(self, guest):
+        guest.pay_fee(fee)
+        self.till += self.entry_cost
