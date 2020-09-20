@@ -22,6 +22,9 @@ class TestRoom(unittest.TestCase):
     def test_room_has_name(self):
         self.assertEqual("The Karaoke Bar", self.room.name)
 
+    def test_room_has_till(self):
+        self.assertEqual(100.00, self.room.till)
+
     def test_can_add_song_to_room(self):
         self.room.add_song(self.song_1)
         self.room.add_song(self.song_2)
